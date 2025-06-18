@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
-  * int _abs - refer to Description
-  * Description: _abs computes the absolute value of an integer
-  * @r: The character to be checked
-  *
+  * _abs - refer to Description
+  * Description: This function computes the absolute value of an integer
+  * @r: An integer input
   * Return: Absolute value of r
   */
 
