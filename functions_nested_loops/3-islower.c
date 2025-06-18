@@ -2,7 +2,8 @@
 
 /**
   * _islower - refer to Description
-  * Description: Checks for letter c and if it is lowercase.
+  * Description: Checks if c exists and if it is lowercase.
+  * @c: The character to be checked
   * Return: (0) success
   */
 
