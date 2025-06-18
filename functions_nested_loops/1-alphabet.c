@@ -3,7 +3,7 @@
 /**
   * main - Print the alphabet in lowercase letters
   *
-  * Return: Always 0
+  * Return: Void
   */
 
 void print_alphabet(void)
@@ -15,7 +15,5 @@ void print_alphabet(void)
 		_putchar(c);
 	}
 
-	_putchar('\n')
-
-	return (0);
+	_putchar('\n');
 }
