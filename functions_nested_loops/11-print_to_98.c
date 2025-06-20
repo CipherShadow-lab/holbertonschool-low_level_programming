@@ -9,11 +9,11 @@
 
 void print_to_98(int n)
 {
-	int i;
+	int i, num, temp;
 
-	for (i = n; (n <= 98) ? i <= 98 : i >= 98; (n <= 98) ? i++ : i--)
+	for (i = n; (n <= 98) ? (i <= 98) : (i >= 98); (n <= 98) ? i++ : i--)
 	{
-		int num = i;
+		num = i;
 
 		if (num < 0)
 		{
@@ -21,14 +21,22 @@ void print_to_98(int n)
 			num = -num;
 		}
 
-		if (num >= 100)
+		temp = num;
+
+		if (temp >= 100)
 		{
-			_putchar((num / 100) + '0');
+			_putchar((temp / 100) + '0');
+			_putchar(((temp / 10) % 10) + '0');
+			_putchar((temp % 10) + '0');
 		}
-		if (num >= 10)
+		else if (temp >= 10)
 		{
-			_putchar((num / 10 % 10) + '0');
-			_putchar((num % 10) + '0');
+			_putchar((temp / 10 % 10) + '0');
+			_putchar((temp % 10) + '0');
+		}
+		else
+		{
+			_putchar(temp + '0');
 		}
 
 		if (i != 98)
