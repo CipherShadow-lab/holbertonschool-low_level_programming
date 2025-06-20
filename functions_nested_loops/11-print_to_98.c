@@ -21,11 +21,11 @@ void print_to_98(int n)
 			num = -num;
 		}
 
-		if (num / 100)
+		if (num >= 100)
 		{
 			_putchar((num / 100) + '0');
 		}
-		if (num / 10)
+		if (num >= 10)
 		{
 			_putchar((num / 10 % 10) + '0');
 			_putchar((num % 10) + '0');
