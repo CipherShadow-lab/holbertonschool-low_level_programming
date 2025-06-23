@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 /**
- * Description: print_line - Function prints a straight line in terminal
- * @n: The number of lines to print
+ * Description: print_diagonal - Function prints a diagonal line in terminal
+ * @n: The number of diagonals to print
  * Return: void
  */
 
-void print_line(int n)
+void print_diagonal(int n)
 {
 	int i;
 
@@ -19,7 +19,7 @@ void print_line(int n)
 	{
 		for (i = 0; i < n; i++)
 		{
-			_putchar(95);
+			_putchar(92);
 		}
 		_putchar('\n');
 	}
