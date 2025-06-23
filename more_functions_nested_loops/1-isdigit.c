@@ -7,7 +7,7 @@
  * Return: 1 if uppercase otherwise 0
  */
 
-int _isupper(int c)
+int _isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 	{
