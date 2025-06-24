@@ -2,29 +2,35 @@
 #include <stdio.h>
 
 /**
- * Description: print_square - Function prints a sqaure
- * @size: The size of the square to  print
- * Return: void
+ * Description: main - Prints Fizz, Buzz and FizzBuzz
+ *
+ * Return: (0) success
  */
 
-void print_square(int size)
+int main(void)
 {
-	int i;
-	int j;
+	int c;
+	char f[5] = "Fizz";
+	char b[5] = "Buzz";
 
-	if (size <= 0)
+	for (c = 1; c <= 100; c++)
 	{
-		_putchar('\n');
-	}
-	else
-	{
-		for (i = 0; i < size; i++)
+		if (c % 3 == 0 && c % 5 == 0)
 		{
-			for (j = 0; j < size; j++)
-			{
-				_putchar('#');
-			}
-			_putchar('\n');
+			printf("FizzBuzz ");
+		}
+		else if (c % 3 == 0)
+		{
+			printf("%s ", f);
+		}
+		else if (c % 5 == 0)
+		{
+			printf("%s ", b);
+		}
+		else
+		{
+			printf("%d ", c);
 		}
 	}
+	return (0);
 }
