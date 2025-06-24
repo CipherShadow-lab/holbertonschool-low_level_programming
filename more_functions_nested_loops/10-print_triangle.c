@@ -2,41 +2,34 @@
 #include <stdio.h>
 
 /**
- * Description: main - Prints Fizz, Buzz and FizzBuzz
- *
- * Return: (0) success
+ * Description: print_triangle - Prints a triangle to size
+ * @size: Size of the triangle
+ * Return: void
  */
 
-int main(void)
+void print_triangle(int size)
 {
-	int c;
-	char f[5] = "Fizz";
-	char b[5] = "Buzz";
+	int x;
+	int y;
+	int z;
 
-	for (c = 1; c <= 100; c++)
+	if (size <= 0)
 	{
-		if (c % 3 == 0 && c % 5 == 0)
+		_putchar('\n');
+	}
+	else
+	{
+		for (x = 0; x < size; x++)
 		{
-			printf("FizzBuzz");
-		}
-		else if (c % 3 == 0)
-		{
-			printf("%s", f);
-		}
-		else if (c % 5 == 0)
-		{
-			printf("%s", b);
-		}
-		else
-		{
-			printf("%d", c);
-		}
-		if (c != 100)
-		{
-			printf(" ");
+			for (y = size - x; y > 1; y--)
+			{
+				_putchar(32);
+			}
+			for (z = 0; z <= x; z++)
+			{
+				_putchar(35);
+			}
+			_putchar('\n');
 		}
 	}
-	printf("\n");
-
-	return (0);
 }
