@@ -21,15 +21,19 @@ int main(void)
 		}
 		else if (c % 3 == 0)
 		{
-			printf("%s ", f);
+			printf("%s", f);
 		}
 		else if (c % 5 == 0)
 		{
-			printf("%s ", b);
+			printf("%s", b);
 		}
 		else
 		{
-			printf("%d ", c);
+			printf("%d", c);
+		}
+		if (c != 100)
+		{
+			printf(" ");
 		}
 	}
 	printf("\n");
