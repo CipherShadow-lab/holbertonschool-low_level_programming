@@ -3,7 +3,7 @@
 
 /**
  * reset_to_98 - Refer to description
- * @n - pointer to n
+ * @n: Pointer to n
  * Description: Function updates the value of a parameter to 98
  * Return: void
  */
