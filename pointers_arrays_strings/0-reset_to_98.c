@@ -3,11 +3,12 @@
 
 /**
  * reset_to_98 - Refer to description
+ * @n - pointer to n
  * Description: Function updates the value of a parameter to 98
  * Return: void
  */
 
 void reset_to_98(int *n)
 {
-	*n = 98
+	*n = 98;
 }
