@@ -8,11 +8,7 @@
  * Return: (0) success
  */
 
-int _puts(char *str)
+void _puts(char *str)
 {
-	char *str;
-
-	_put(str);
-
-	return (0);
+	_puts(str);
 }
