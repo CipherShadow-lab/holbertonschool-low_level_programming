@@ -3,23 +3,24 @@
 
 /**
  * print_rev - Refer to Description
- * @str: String to be printed
- * Description: Function prints a string in reverse followed by a new line.
+ * @s: String to be printed
+ * Description: Function prints a string in reverse.
  * Return: (0) success
  */
 
-void print_rev(char *str)
+void print_rev(char *s)
 {
-	int len = 0, index;
+	char *len = s;
 
-	while (str[index++])
+	while (*len)
 	{
 		len++;
+		len -= 1;
 	}
-
-	for (index = len - 1; index >= 0; index--)
+	while (len)
 	{
-		_putchar(str[index]);
+		_putchar(*s);
+		len--;
 	}
 	_putchar('\n');
 }
