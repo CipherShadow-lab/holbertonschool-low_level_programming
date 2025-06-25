@@ -10,17 +10,16 @@
 
 void print_rev(char *str)
 {
-	char *len = str;
+	int len = 0, index;
 
-	while (*len)
+	while (str[index++])
 	{
 		len++;
 	}
 
-	while (len)
+	for (index = len - 1; index >= 0; index--)
 	{
-		_putchar(*str);
-		len--;
+		_putchar(str[index]);
 	}
 	_putchar('\n');
 }
