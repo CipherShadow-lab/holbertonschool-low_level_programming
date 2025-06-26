@@ -5,23 +5,21 @@
  * print_rev - Refer to Description
  * @s: String to be printed
  * Description: Function prints a string in reverse.
- * Return: (0) success
+ * Return: void
  */
 
 void print_rev(char *s)
 {
-	char *len = s;
+	int c = 0;
 
-	while (*len)
+	while (s[c] != '\0')
 	{
-		len++;
+		c++;
 	}
-	len -= 1;
 
-	while (len)
+	for (c -= 1; c >= 0; c--)
 	{
-		_putchar(*s);
-		len--;
+		_putchar(s[c]);
 	}
 	_putchar('\n');
 }
