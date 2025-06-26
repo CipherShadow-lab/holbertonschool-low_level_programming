@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-#include <string.h>
+
 
 /**
  * rev_string - Refer to Description
@@ -11,17 +11,26 @@
 
 void rev_string(char *s)
 {
-	int c = 0;
-	int r = strlen(s) - 1;
-	char t;
+	int i, c, k;
+	char *t, tmp;
 
-	while (c < r)
+	t = s;
+
+	while (s[c] != '\0')
 	{
-		t = s[c];
-		s[c] = s[r];
-		s[r] = t;
-
 		c++;
-		r--;
+	}
+
+	for (k = 1; k < c; k++)
+	{
+		t++;
+	}
+
+	for (i = 0; i < (c / 2); i++)
+	{
+		tmp = s[i];
+		s[i] = *t;
+		*t = tmp;
+		t--;
 	}
 }
