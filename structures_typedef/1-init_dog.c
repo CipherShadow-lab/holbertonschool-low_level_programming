@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * print_dog - Prints a struct dog
+ * init_dog - Prints a struct dog
  * @d: dog to be iinitialised
  * @name: name of dog
  * @age: age of dog
