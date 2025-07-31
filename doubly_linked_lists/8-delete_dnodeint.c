@@ -10,7 +10,7 @@
  *
  * Return: 1 if successful
  */
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *temp = *head;
 	unsigned int i = 0;
@@ -44,5 +44,5 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 		temp->next->prev = temp->prev;
 
 	free(temp);
-	return(1);
+	return (1);
 }
