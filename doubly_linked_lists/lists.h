@@ -10,7 +10,7 @@
  * Description: doubly linked list node structure.
  */
 
-typedef struct list_s
+typedef struct dlistint_s
 {
 	int n;
 	struct dlistint_s *prev;
