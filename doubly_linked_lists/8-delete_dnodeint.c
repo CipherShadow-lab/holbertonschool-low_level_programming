@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * delete_dnodeatint_at_index - function deletes a node at an index of a list
+ * delete_dnodeint_at_index - function deletes a node at an index of a list
  * @head: double pointer to head
  * @index: index to delete
  *
