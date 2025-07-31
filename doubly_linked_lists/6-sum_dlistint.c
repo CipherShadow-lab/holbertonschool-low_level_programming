@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * sum_dlistint - function returns the sum of all data (n) in a  dlistint_t list
+ * sum_dlistint - function returns the sum of all data in a  dlistint_t list
  * @head: pointer to head
  *
  * Return: sum of data (n)
