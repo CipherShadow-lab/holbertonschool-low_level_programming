@@ -4,14 +4,14 @@
 #include "lists.h"
 
 /**
- * add_node - function adds a node at the end of the list_t list
+ * add_node_end - function adds a node at the end of the list_t list
  * @head: double pointer to head
  * @str: pointer to string
  *
  * Return: new node added to end of list_t list
  */
 
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *newNode;
 
