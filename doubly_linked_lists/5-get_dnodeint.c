@@ -4,9 +4,9 @@
 #include "lists.h"
 
 /**
- * get-dnodeint_at_index - function returns the nth node of a dlistint_t list
+ * get_dnodeint_at_index - function returns the nth node of a dlistint_t list
  * @head: pointer to head
- * index: index of node starting from zero
+ * @index: index of node starting from zero
  *
  * Return: NULL if failed
  */
