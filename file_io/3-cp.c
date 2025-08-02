@@ -35,7 +35,7 @@ void handle_error(const char *msg, const char *file, int code, int fd)
 int main(int argc, char *argv[])
 {
 	int fd_from, fd_to;
-	ssize_t r, w;
+	ssize_t r, w, total;
 	char buf[1024];
 
 	if (argc != 3)
@@ -53,10 +53,13 @@ int main(int argc, char *argv[])
 
 	while ((r = read(fd_from, buf, 1024)) > 0)
 	{
-		w = write(fd_to, buf, r);
+		total = 0;
 
-		if (w != r)
+		w = write(fd_to, buf + total, r - total);
+
+		if (w == -1)
 			handle_error("Error: Can't write to %s\n", argv[2], 99, fd_from);
+		total += w;
 	}
 
 	if (r == -1)
