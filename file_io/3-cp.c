@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 		{
 			w = write(fd_to, buf + total, r - total);
 			if (w == -1)
-				handle_error("Error: Can't write to %s\n", argv[2], 99, fd_to);
+				handle_error("Error: Can't write to %s\n", argv[2], 98, fd_to);
 			total += w;
 		}
 	}
