@@ -1,13 +1,37 @@
 #include "main.h"
+#include <string.h>
 
 /**
- * main - function copies contents of a file to another file
+ * handle_error - handles errors with copying files
+ * @msg: error message
+ * @file: file related to error
+ * @code: exit error code
+ * @fd: file descriptor
+ *
+ * Return: void
+ */
+void handle_error(const char *msg, const char *file, int code, int fd)
+{
+	if (file)
+		dprintf(STDERR_FILENO, msg, file);
+	else if (strchr(msg, '%') && strchr(msg, 'd'))
+		dprintf(STDERR_FILENO, msg, fd);
+	else
+		dprintf(STDERR_FILENO, "%s", msg);
+
+	if (fd >= 0)
+		close(fd);
+
+	exit(code);
+}
+
+/**
+ * main - function copies contents of file to another file
  * @argc: argument count
  * @argv: argument vector
  *
  * Return: 0 on success
  */
-
 int main(int argc, char *argv[])
 {
 	int fd_from, fd_to;
@@ -15,7 +39,7 @@ int main(int argc, char *argv[])
 	char buf[1024];
 
 	if (argc != 3)
-		handle_error("Usage: cp file_from file_to\n", 97, -1);
+		handle_error("Usage: cp file_from file_to\n", NULL, 97, -1);
 
 	fd_from = open(argv[1], O_RDONLY);
 
@@ -39,10 +63,10 @@ int main(int argc, char *argv[])
 		handle_error("Error: Can't read from file %s\n", argv[1], 98, fd_from);
 
 	if (close(fd_from) == -1)
-		handle_error("Error: Can't close fd %d\n", NULL, 100, -1);
+		handle_error("Error: Can't close fd %d\n", NULL, 100, fd_from);
 
 	if (close(fd_to) == -1)
-		handle_error("Error: Can't close fd %d\n", NULL, 100, -1);
+		handle_error("Error: Can't close fd %d\n", NULL, 100, fd_to);
 
 	return (0);
 }
