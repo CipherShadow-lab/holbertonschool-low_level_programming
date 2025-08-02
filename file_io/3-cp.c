@@ -50,11 +50,15 @@ int main(int argc, char *argv[])
 	if (fd_from == -1)
 		handle_error_str("Error: Can't read from file %s\n", argv[1], 98, -1);
 
+	r = read(fd_from, buf, sizeof(buf));
+	if (r == -1)
+		handle_error_str("Error: Can't read from file %s\n", argv[1], 98, fd_from);
+
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to == -1)
 		handle_error_str("Error: Can't write to %s\n", argv[2], 99, fd_from);
 
-	while ((r = read(fd_from, buf, sizeof(buf))) > 0)
+	while (r > 0)
 	{
 		total = 0;
 		while (total < r)
@@ -64,10 +68,10 @@ int main(int argc, char *argv[])
 				handle_error_str("Error: Can't write to %s\n", argv[2], 99, fd_to);
 			total += w;
 		}
+		r = read(fd_from, buf, sizeof(buf));
+		if (r == -1)
+			handle_error_str("Error: Can't read from file %s\n", argv[1], 98, fd_from);
 	}
-	if (r == -1)
-		handle_error_str("Error: Can't read from file %s\n", argv[1], 98, fd_from);
-
 	if (close(fd_from) == -1)
 		handle_error_fd("Error: Can't close fd %d\n", fd_from, 100, -1);
 
