@@ -53,17 +53,18 @@ int main(int argc, char *argv[])
 
 	while ((r = read(fd_from, buf, 1024)) > 0)
 	{
+		if (r == -1)
+			handle_error("Error: Can't read from file %s\n", argv[1], 98, fd_from);
+
 		total = 0;
-
-		w = write(fd_to, buf + total, r - total);
-
-		if (w == -1)
-			handle_error("Error: Can't write to %s\n", argv[2], 99, fd_from);
-		total += w;
+		while (total < r)
+		{
+			w = write(fd_to, buf + total, r - total);
+			if (w == -1)
+				handle_error("Error: Can't write to %s\n", argv[2], 99, fd_from);
+			total += w;
+		}
 	}
-
-	if (r == -1)
-		handle_error("Error: Can't read from file %s\n", argv[1], 98, fd_from);
 
 	if (close(fd_from) == -1)
 		handle_error("Error: Can't close fd %d\n", NULL, 100, fd_from);
