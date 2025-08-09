@@ -1,27 +1,6 @@
 #include "hash_tables.h"
 
 /**
- * _strcmp - function compares two strings
- * @s1: first string to compare
- * @s2: second string to compare
- *
- * Return: 0 if equal
- */
-int _strcmp(const char *s1, const char *s2)
-{
-	while (*s1 && *s2)
-	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-
-		s1++;
-		s2++;
-	}
-
-	return (*s1 - *s2);
-}
-
-/**
  * hash_table_get - function gets value associated with a key
  * @ht: pointer to hash table
  * @key: key to search for
