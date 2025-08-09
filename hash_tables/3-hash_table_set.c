@@ -18,7 +18,7 @@ char *_strdup(const char *str)
 		len++;
 
 	copy = malloc(sizeof(char) * (len + 1));
-	
+
 	if (copy == NULL)
 		return (NULL);
 
@@ -65,7 +65,7 @@ hash_node_t *create_node(const char *key, const char *value)
 	char *dup_value;
 
 	new_node = malloc(sizeof(hash_node_t));
-	
+
 	if (new_node == NULL)
 		return (NULL);
 
@@ -122,10 +122,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			node->value = dup_value;
 			return (1);
 		}
-		
+
 		node = node->next;
 	}
-	
+
 	new_node = create_node(key, value);
 
 	if (new_node == NULL)
@@ -133,6 +133,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
-	
+
 	return (1);
 }
